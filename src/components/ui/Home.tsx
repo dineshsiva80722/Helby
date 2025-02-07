@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Button } from './button';
 import Myprofile from '@/assets/profile.png';
@@ -16,7 +16,7 @@ const Home = () => {
   const titleRef = useRef(null);
   const paraRef = useRef(null);
   const subtitles = useRef(null);
-  const buttonRefs = useRef<HTMLButtonElement[]>([]);
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const imageRefs = useRef<HTMLImageElement[]>([]);
   useEffect(() => {
 
@@ -79,13 +79,17 @@ const Home = () => {
           </div>
           <div className="flex flex-col md:flex-row gap-4 py-6 md:py-8 items-center md:items-start ml-0 md:ml-8">
             <Button
-              ref={el => buttonRefs.current[0] = el}
+              ref={el => {
+                buttonRefs.current[0] = el as HTMLButtonElement | null;
+              }}
               className="rounded-full px-4 py-2"
             >
               Get Started Free
             </Button>
             <Button
-              ref={el => buttonRefs.current[1] = el}
+              ref={el => {
+                buttonRefs.current[1] = el as HTMLButtonElement | null;
+              }}
               className="rounded-3xl bg-white hover:text-white text-black border-2 border-black px-4 py-2"
             >
               Book a Demo
@@ -93,7 +97,11 @@ const Home = () => {
           </div>
           <div className="flex items-center justify-center md:justify-start ml-0 md:ml-8">
             <img
-              ref={el => imageRefs.current[0] = el}
+              ref={el => {
+                if (el) {
+                  imageRefs.current[0] = el;
+                }
+              }}
               className="h-10 md:h-14"
               src={Myprofile}
               alt="Profile"
@@ -108,13 +116,21 @@ const Home = () => {
         </div>
         <div className="relative mt-8 md:mt-0 flex justify-center md:block">
           <img
-            ref={el => imageRefs.current[1] = el}
+            ref={el => {
+              if (el) {
+                imageRefs.current[1] = el;
+              }
+            }}
             className="w-11/12 md:w-full -mt-20 md:-mt-36"
             src={backimg}
             alt="Background"
           />
           <img
-            ref={el => imageRefs.current[2] = el}
+            ref={el => {
+              if (el) {
+                imageRefs.current[2] = el;
+              }
+            }}
             className="absolute object-contain -top-24 pt-24 right-12 w-8/12"
             src={Message}
             alt="Message"

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import One from '@/assets/resources/one.jpeg';
 import Two from '@/assets/resources/two.jpeg';
 import Three from '@/assets/resources/three.jpeg';

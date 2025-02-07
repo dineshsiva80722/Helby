@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Trust from '@/assets/trustpilot.png'
 import Star from '@/assets/star.png'
 import Myprofile from '@/assets/profile.png'

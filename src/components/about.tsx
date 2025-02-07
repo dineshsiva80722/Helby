@@ -1,6 +1,4 @@
-import React from 'react';
 import Home from '@/assets/Home.png';
-import { Button } from './ui/button';
 import { useEffect,useRef } from 'react';
 import { gsap } from 'gsap';
 

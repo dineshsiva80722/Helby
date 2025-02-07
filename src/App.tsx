@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Button } from './components/ui/button';
 import MyImage from './assets/Home.png';
 import Home from './components/ui/Home';
@@ -9,7 +9,7 @@ import Review from './components/ui/review';
 import Resources from '@/components/ui/resource';
 import Land from '@/components/ui/land';
 import About from '@/components/about';
-import features from './components/ui/features';
+
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Boximg from '@/assets/flexbox.png';
 import Box2 from '@/assets/box-2.png';
 import Box3 from '@/assets/Box-3.png';
